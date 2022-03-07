@@ -23,7 +23,6 @@ local.properties
 build/
 
 # Local configuration file (sdk path, etc)
-local.properties
 
 # Log/OS Files
 *.log
@@ -36,7 +35,6 @@ captures/
 output.json
 
 # IntelliJ
-*.iml
 .idea/
 misc.xml
 deploymentTargetDropDown.xml
@@ -237,7 +235,6 @@ bin/
 gen/
 
 # Gradle files
-.gradle
 
 # Signing files
 .signing/
@@ -268,7 +265,6 @@ proguard/
 # Android Patch
 
 # External native build folder generated in Android Studio 2.2 and later
-.externalNativeBuild
 
 # NDK
 obj/
