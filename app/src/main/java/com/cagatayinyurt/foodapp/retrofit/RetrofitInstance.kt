@@ -5,12 +5,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
 
-//    lateinit var api: MealAPI
-//
-//    init {
-//
-//    }
-
     val api: MealAPI by lazy {
         Retrofit.Builder()
             .baseUrl("https://www.themealdb.com/api/json/v1/1/")

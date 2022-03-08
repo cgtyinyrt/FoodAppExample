@@ -2,12 +2,11 @@ package com.cagatayinyurt.foodapp.view
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
-import com.cagatayinyurt.foodapp.R
 import com.cagatayinyurt.foodapp.databinding.FragmentHomeBinding
 import com.cagatayinyurt.foodapp.model.Meal
 import com.cagatayinyurt.foodapp.model.MealList
@@ -31,7 +30,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        RetrofitInstance.api.getRandomMeal().enqueue(object: Callback<MealList> {
+        RetrofitInstance.api.getRandomMeal().enqueue(object : Callback<MealList> {
             override fun onResponse(call: Call<MealList>, response: Response<MealList>) {
                 if (response.body() != null) {
                     val randomMeal: Meal = response.body()!!.meals[0]
