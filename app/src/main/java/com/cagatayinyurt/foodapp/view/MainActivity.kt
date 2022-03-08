@@ -1,9 +1,10 @@
-package com.cagatayinyurt.foodapp
+package com.cagatayinyurt.foodapp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import com.cagatayinyurt.foodapp.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
