@@ -12,4 +12,5 @@
     <item android:title="@string/categories"
         android:icon="@drawable/ic_categories"
         android:id="@+id/categoriesFragment"/>
+
 </menu>
