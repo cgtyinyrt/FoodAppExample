@@ -35,23 +35,27 @@ class HomeViewModel : ViewModel() {
     }
 
     fun getPopularItems() {
-        RetrofitInstance.api.getPopularItems("Seafood").enqueue(object : Callback<MealsByCategoryList> {
-            override fun onResponse(call: Call<MealsByCategoryList>, response: Response<MealsByCategoryList>) {
-                if (response.body() != null) {
-                    popularMealLiveData.value = response.body()!!.meals
-                } else {
-                    return
+        RetrofitInstance.api.getPopularItems("Seafood").enqueue(
+            object : Callback<MealsByCategoryList> {
+                override fun onResponse(
+                    call: Call<MealsByCategoryList>,
+                    response: Response<MealsByCategoryList>
+                ) {
+                    if (response.body() != null) {
+                        popularMealLiveData.value = response.body()!!.meals
+                    } else {
+                        return
+                    }
                 }
-            }
 
-            override fun onFailure(call: Call<MealsByCategoryList>, t: Throwable) {
-                Log.d("Home Fragment", t.message.toString())
-            }
-        })
+                override fun onFailure(call: Call<MealsByCategoryList>, t: Throwable) {
+                    Log.d("Home Fragment", t.message.toString())
+                }
+            })
     }
 
     fun getCategories() {
-        RetrofitInstance.api.getCategories().enqueue(object: Callback<CategoryList> {
+        RetrofitInstance.api.getCategories().enqueue(object : Callback<CategoryList> {
             override fun onResponse(call: Call<CategoryList>, response: Response<CategoryList>) {
                 response.body()?.let { categoryList ->
                     categoriesLiveData.postValue(categoryList.categories)

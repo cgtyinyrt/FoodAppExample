@@ -1,8 +1,8 @@
 package com.cagatayinyurt.foodapp.retrofit
 
 import com.cagatayinyurt.foodapp.model.CategoryList
-import com.cagatayinyurt.foodapp.model.MealsByCategoryList
 import com.cagatayinyurt.foodapp.model.MealList
+import com.cagatayinyurt.foodapp.model.MealsByCategoryList
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -19,5 +19,8 @@ interface MealAPI {
     fun getPopularItems(@Query("c") categoryName: String): Call<MealsByCategoryList>
 
     @GET("categories.php")
-    fun getCategories() : Call<CategoryList>
+    fun getCategories(): Call<CategoryList>
+
+    @GET("filter.php")
+    fun getMealsByCategory(@Query("c") categoryName: String): Call<MealsByCategoryList>
 }

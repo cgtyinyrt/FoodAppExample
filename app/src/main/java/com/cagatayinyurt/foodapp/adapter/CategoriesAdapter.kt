@@ -11,6 +11,7 @@ import com.cagatayinyurt.foodapp.model.Category
 class CategoriesAdapter : RecyclerView.Adapter<CategoriesAdapter.CategoriesViewHolder>() {
 
     private var categoriesList = ArrayList<Category>()
+    var onItemClick: ((Category) ->Unit)? = null
 
     inner class CategoriesViewHolder(
         val binding: CategoryItemBinding
@@ -32,6 +33,10 @@ class CategoriesAdapter : RecyclerView.Adapter<CategoriesAdapter.CategoriesViewH
             .into(holder.binding.imgCategory)
 
         holder.binding.tvCategoryName.text = categoriesList[position].strCategory
+
+        holder.itemView.setOnClickListener {
+            onItemClick!!.invoke(categoriesList[position])
+        }
     }
 
     override fun getItemCount(): Int {
