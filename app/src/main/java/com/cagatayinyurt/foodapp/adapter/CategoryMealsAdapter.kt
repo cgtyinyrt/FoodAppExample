@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.cagatayinyurt.foodapp.databinding.MealItemBinding
-import com.cagatayinyurt.foodapp.model.MealsByCategory
+import com.cagatayinyurt.foodapp.data.model.MealsByCategory
 
 class CategoryMealsAdapter : RecyclerView.Adapter<CategoryMealsAdapter.CategoryViewHolder>() {
 

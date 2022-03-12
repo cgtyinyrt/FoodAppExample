@@ -4,12 +4,16 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.cagatayinyurt.foodapp.R
 import com.cagatayinyurt.foodapp.databinding.ActivityMealBinding
+import com.cagatayinyurt.foodapp.data.local.MealDatabase
+import com.cagatayinyurt.foodapp.data.model.Meal
 import com.cagatayinyurt.foodapp.viewmodel.MealViewModel
+import com.cagatayinyurt.foodapp.viewmodel.MealViewModelFactory
 
 class MealActivity : AppCompatActivity() {
 
@@ -25,7 +29,10 @@ class MealActivity : AppCompatActivity() {
         binding = ActivityMealBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel = ViewModelProvider(this)[MealViewModel::class.java]
+        //viewModel = ViewModelProvider(this)[MealViewModel::class.java]
+        val mealDatabase = MealDatabase.getInstance(this)
+        val viewModelFactory = MealViewModelFactory(mealDatabase)
+        viewModel = ViewModelProvider(this, viewModelFactory)[MealViewModel::class.java]
 
         getMealInformationFromIntent()
         setInformationInViews()
@@ -36,6 +43,16 @@ class MealActivity : AppCompatActivity() {
         observeMealDetailsLiveData()
 
         onYoutubeImageClick()
+        onFavoriteClick()
+    }
+
+    private fun onFavoriteClick() {
+        binding.fabAddToFavorites.setOnClickListener {
+            mealToSave?.let {
+                viewModel.insertAndUpdateMeal(it)
+                Toast.makeText(this, "Meal Saved.", Toast.LENGTH_LONG).show()
+            }
+        }
     }
 
     private fun onYoutubeImageClick() {
@@ -45,14 +62,16 @@ class MealActivity : AppCompatActivity() {
         }
     }
 
+    private var mealToSave: Meal? = null
     private fun observeMealDetailsLiveData() {
         viewModel.observeMealDetailLiveData().observe(this) { t ->
             onResponseCase()
+            mealToSave = t
             binding.tvCategory.text = "Category: ${t!!.strCategory}"
             binding.tvArea.text = "Area: ${t.strArea}"
             binding.tvInstructionsSteps.text = t.strInstructions
 
-            youtubeLink = t.strYoutube
+            youtubeLink = t.strYoutube.toString()
         }
     }
 

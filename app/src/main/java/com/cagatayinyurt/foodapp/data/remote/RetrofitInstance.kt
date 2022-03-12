@@ -1,4 +1,4 @@
-package com.cagatayinyurt.foodapp.retrofit
+package com.cagatayinyurt.foodapp.data.remote
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

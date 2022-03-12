@@ -13,8 +13,8 @@ import com.bumptech.glide.Glide
 import com.cagatayinyurt.foodapp.adapter.CategoriesAdapter
 import com.cagatayinyurt.foodapp.adapter.PopularMealAdapter
 import com.cagatayinyurt.foodapp.databinding.FragmentHomeBinding
-import com.cagatayinyurt.foodapp.model.Meal
-import com.cagatayinyurt.foodapp.model.MealsByCategory
+import com.cagatayinyurt.foodapp.data.model.Meal
+import com.cagatayinyurt.foodapp.data.model.MealsByCategory
 import com.cagatayinyurt.foodapp.viewmodel.HomeViewModel
 
 class HomeFragment : Fragment() {

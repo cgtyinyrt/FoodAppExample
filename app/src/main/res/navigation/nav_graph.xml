@@ -25,4 +25,9 @@
         android:name="com.cagatayinyurt.foodapp.view.MealActivity"
         android:label="activity_meal"
         tools:layout="@layout/activity_meal" />
+    <activity
+        android:id="@+id/categoryMealsActivity"
+        android:name="com.cagatayinyurt.foodapp.view.CategoryMealsActivity"
+        android:label="activity_category_meals"
+        tools:layout="@layout/activity_category_meals" />
 </navigation>

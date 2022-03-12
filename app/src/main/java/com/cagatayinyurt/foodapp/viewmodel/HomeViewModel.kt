@@ -4,8 +4,8 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.cagatayinyurt.foodapp.model.*
-import com.cagatayinyurt.foodapp.retrofit.RetrofitInstance
+import com.cagatayinyurt.foodapp.data.model.*
+import com.cagatayinyurt.foodapp.data.remote.RetrofitInstance
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

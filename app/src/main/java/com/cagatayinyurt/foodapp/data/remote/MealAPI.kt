@@ -1,8 +1,8 @@
-package com.cagatayinyurt.foodapp.retrofit
+package com.cagatayinyurt.foodapp.data.remote
 
-import com.cagatayinyurt.foodapp.model.CategoryList
-import com.cagatayinyurt.foodapp.model.MealList
-import com.cagatayinyurt.foodapp.model.MealsByCategoryList
+import com.cagatayinyurt.foodapp.data.model.CategoryList
+import com.cagatayinyurt.foodapp.data.model.MealList
+import com.cagatayinyurt.foodapp.data.model.MealsByCategoryList
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
