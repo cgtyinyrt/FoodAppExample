@@ -6,12 +6,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.cagatayinyurt.foodapp.R
-import com.cagatayinyurt.foodapp.databinding.ActivityMealBinding
 import com.cagatayinyurt.foodapp.data.local.MealDatabase
 import com.cagatayinyurt.foodapp.data.model.Meal
+import com.cagatayinyurt.foodapp.databinding.ActivityMealBinding
 import com.cagatayinyurt.foodapp.viewmodel.MealViewModel
 import com.cagatayinyurt.foodapp.viewmodel.MealViewModelFactory
 
@@ -81,8 +82,18 @@ class MealActivity : AppCompatActivity() {
             .into(binding.imgMealDetail)
 
         binding.collapsingToolBar.title = mealName
-        binding.collapsingToolBar.setCollapsedTitleTextColor(resources.getColor(R.color.white))
-        binding.collapsingToolBar.setExpandedTitleColor(resources.getColor(R.color.white))
+        binding.collapsingToolBar.setCollapsedTitleTextColor(
+            ContextCompat.getColor(
+                applicationContext,
+                R.color.white
+            )
+        )
+        binding.collapsingToolBar.setExpandedTitleColor(
+            ContextCompat.getColor(
+                applicationContext,
+                R.color.white
+            )
+        )
     }
 
     private fun getMealInformationFromIntent() {
