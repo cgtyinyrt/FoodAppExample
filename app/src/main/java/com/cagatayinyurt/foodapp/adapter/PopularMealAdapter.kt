@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.cagatayinyurt.foodapp.databinding.PopularItemsBinding
 import com.cagatayinyurt.foodapp.data.model.MealsByCategory
+import com.cagatayinyurt.foodapp.databinding.PopularItemsBinding
 
 class PopularMealAdapter : RecyclerView.Adapter<PopularMealAdapter.PopularMealHolder>() {
 

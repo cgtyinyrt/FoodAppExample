@@ -2,12 +2,22 @@ package com.cagatayinyurt.foodapp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.cagatayinyurt.foodapp.R
+import com.cagatayinyurt.foodapp.data.local.MealDatabase
+import com.cagatayinyurt.foodapp.viewmodel.HomeViewModel
+import com.cagatayinyurt.foodapp.viewmodel.HomeViewModelFactory
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+
+    val viewModel: HomeViewModel by lazy {
+        val mealDatabase = MealDatabase.getInstance(this)
+        val homeViewModelProviderFactory = HomeViewModelFactory(mealDatabase)
+        ViewModelProvider(this, homeViewModelProviderFactory)[HomeViewModel::class.java]
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

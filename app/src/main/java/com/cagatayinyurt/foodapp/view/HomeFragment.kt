@@ -6,15 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.cagatayinyurt.foodapp.adapter.CategoriesAdapter
 import com.cagatayinyurt.foodapp.adapter.PopularMealAdapter
-import com.cagatayinyurt.foodapp.databinding.FragmentHomeBinding
 import com.cagatayinyurt.foodapp.data.model.Meal
 import com.cagatayinyurt.foodapp.data.model.MealsByCategory
+import com.cagatayinyurt.foodapp.databinding.FragmentHomeBinding
 import com.cagatayinyurt.foodapp.viewmodel.HomeViewModel
 
 class HomeFragment : Fragment() {
@@ -34,7 +33,8 @@ class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+        //viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+        viewModel = (activity as MainActivity).viewModel
 
         popularItemsAdapter = PopularMealAdapter()
     }
