@@ -4,15 +4,17 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.cagatayinyurt.foodapp.data.local.MealDatabase
 import com.cagatayinyurt.foodapp.data.model.*
 import com.cagatayinyurt.foodapp.data.remote.RetrofitInstance
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class HomeViewModel(
-    mealDatabase: MealDatabase
+    val mealDatabase: MealDatabase
 ) : ViewModel() {
 
     private var randomMealLiveData = MutableLiveData<Meal>()
@@ -70,6 +72,18 @@ class HomeViewModel(
                 Log.d("HomeViewModel", t.message.toString())
             }
         })
+    }
+
+    fun insertAndUpdateMeal(meal: Meal) {
+        viewModelScope.launch {
+            mealDatabase.mealDao().insertOrUpdateMeal(meal)
+        }
+    }
+
+    fun deleteMeal(meal: Meal) {
+        viewModelScope.launch {
+            mealDatabase.mealDao().deleteMeal(meal)
+        }
     }
 
     fun observeRandomMealLiveData(): LiveData<Meal> {

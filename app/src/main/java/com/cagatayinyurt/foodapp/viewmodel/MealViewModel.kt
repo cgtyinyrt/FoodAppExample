@@ -45,10 +45,4 @@ class MealViewModel(
             mealDatabase.mealDao().insertOrUpdateMeal(meal)
         }
     }
-
-    fun deleteMeal(meal: Meal) {
-        viewModelScope.launch {
-            mealDatabase.mealDao().deleteMeal(meal)
-        }
-    }
 }
