@@ -7,8 +7,6 @@
     <string name="favorites">Favorites</string>
     <string name="content1" tools:ignore="Typos">content1</string>
     <string name="content2">content2</string>
-    <string name="categories_fragment">Categories Fragment</string>
-    <string name="favorites_fragment">Favorites Fragment</string>
     <string name="category">Category</string>
     <string name="area">Area</string>
     <string name="instructions">Instructions:</string>

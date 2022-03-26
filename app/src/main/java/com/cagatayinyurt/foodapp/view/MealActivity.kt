@@ -50,7 +50,7 @@ class MealActivity : AppCompatActivity() {
     private fun onFavoriteClick() {
         binding.fabAddToFavorites.setOnClickListener {
             mealToSave?.let {
-                viewModel.insertAndUpdateMeal(it)
+                viewModel.insertMeal(it)
                 Toast.makeText(this, "Meal Saved.", Toast.LENGTH_LONG).show()
             }
         }

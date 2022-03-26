@@ -74,9 +74,9 @@ class HomeViewModel(
         })
     }
 
-    fun insertAndUpdateMeal(meal: Meal) {
+    fun insertMeal(meal: Meal) {
         viewModelScope.launch {
-            mealDatabase.mealDao().insertOrUpdateMeal(meal)
+            mealDatabase.mealDao().insertMeal(meal)
         }
     }
 

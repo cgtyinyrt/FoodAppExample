@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -11,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.cagatayinyurt.foodapp.adapter.FavoritesMealsAdapter
 import com.cagatayinyurt.foodapp.databinding.FragmentFavoritesBinding
 import com.cagatayinyurt.foodapp.viewmodel.HomeViewModel
-import com.google.android.material.snackbar.Snackbar
 
 class FavoritesFragment : Fragment() {
 
@@ -53,12 +53,13 @@ class FavoritesFragment : Fragment() {
                 val position = viewHolder.adapterPosition
                 viewModel.deleteMeal(favoritesAdapter.differ.currentList[position])
 
-                Snackbar.make(requireView(), "Meal Deleted.", Snackbar.LENGTH_LONG).setAction(
-                    "Undo",
-                    View.OnClickListener {
-                        viewModel.insertAndUpdateMeal(favoritesAdapter.differ.currentList[position])
-                    }
-                ).show()
+//                Snackbar.make(requireView(), "Meal Deleted.", Snackbar.LENGTH_LONG).setAction(
+//                    "Undo"
+//                ) {
+//                    viewModel.insertMeal(favoritesAdapter.differ.currentList[position])
+//                }.show()
+
+                Toast.makeText(context, "Meal Deleted.", Toast.LENGTH_LONG).show()
             }
         }
 

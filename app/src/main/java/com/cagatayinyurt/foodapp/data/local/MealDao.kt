@@ -7,8 +7,11 @@ import com.cagatayinyurt.foodapp.data.model.Meal
 @Dao
 interface MealDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertOrUpdateMeal(meal: Meal)
+//    @Insert(onConflict = OnConflictStrategy.REPLACE)
+//    suspend fun insertOrUpdateMeal(meal: Meal)
+
+    @Insert
+    suspend fun insertMeal(meal: Meal)
 
     @Delete
     suspend fun deleteMeal(meal: Meal)
