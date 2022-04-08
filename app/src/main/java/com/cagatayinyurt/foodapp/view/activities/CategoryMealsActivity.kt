@@ -1,4 +1,4 @@
-package com.cagatayinyurt.foodapp.view
+package com.cagatayinyurt.foodapp.view.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.cagatayinyurt.foodapp.adapter.CategoryMealsAdapter
 import com.cagatayinyurt.foodapp.databinding.ActivityCategoryMealsBinding
+import com.cagatayinyurt.foodapp.view.fragments.HomeFragment
 import com.cagatayinyurt.foodapp.viewmodel.CategoryMealsViewModel
 
 class CategoryMealsActivity : AppCompatActivity() {

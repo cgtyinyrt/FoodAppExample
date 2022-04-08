@@ -1,4 +1,4 @@
-package com.cagatayinyurt.foodapp.view
+package com.cagatayinyurt.foodapp.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.cagatayinyurt.foodapp.adapter.FavoritesMealsAdapter
 import com.cagatayinyurt.foodapp.databinding.FragmentFavoritesBinding
+import com.cagatayinyurt.foodapp.view.activities.MainActivity
 import com.cagatayinyurt.foodapp.viewmodel.HomeViewModel
 
 class FavoritesFragment : Fragment() {

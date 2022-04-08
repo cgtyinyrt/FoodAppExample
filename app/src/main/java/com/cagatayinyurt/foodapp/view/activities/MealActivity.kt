@@ -1,4 +1,4 @@
-package com.cagatayinyurt.foodapp.view
+package com.cagatayinyurt.foodapp.view.activities
 
 import android.content.Intent
 import android.net.Uri
@@ -13,6 +13,7 @@ import com.cagatayinyurt.foodapp.R
 import com.cagatayinyurt.foodapp.data.local.MealDatabase
 import com.cagatayinyurt.foodapp.data.model.Meal
 import com.cagatayinyurt.foodapp.databinding.ActivityMealBinding
+import com.cagatayinyurt.foodapp.view.fragments.HomeFragment
 import com.cagatayinyurt.foodapp.viewmodel.MealViewModel
 import com.cagatayinyurt.foodapp.viewmodel.MealViewModelFactory
 

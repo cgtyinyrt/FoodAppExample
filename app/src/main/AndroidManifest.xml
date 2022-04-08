@@ -14,10 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodApp">
         <activity
-            android:name=".view.CategoryMealsActivity"
+            android:name=".view.activities.CategoryMealsActivity"
             android:exported="false" />
         <activity
-            android:name=".view.MainActivity"
+            android:name=".view.activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.MealActivity">
+        <activity android:name=".view.activities.MealActivity">
 
         </activity>
     </application>

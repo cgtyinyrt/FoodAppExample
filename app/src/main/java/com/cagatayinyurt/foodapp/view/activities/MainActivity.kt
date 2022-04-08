@@ -1,4 +1,4 @@
-package com.cagatayinyurt.foodapp.view
+package com.cagatayinyurt.foodapp.view.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

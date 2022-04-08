@@ -1,4 +1,4 @@
-package com.cagatayinyurt.foodapp.view
+package com.cagatayinyurt.foodapp.view.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -14,6 +14,10 @@ import com.cagatayinyurt.foodapp.adapter.PopularMealAdapter
 import com.cagatayinyurt.foodapp.data.model.Meal
 import com.cagatayinyurt.foodapp.data.model.MealsByCategory
 import com.cagatayinyurt.foodapp.databinding.FragmentHomeBinding
+import com.cagatayinyurt.foodapp.view.activities.CategoryMealsActivity
+import com.cagatayinyurt.foodapp.view.activities.MainActivity
+import com.cagatayinyurt.foodapp.view.activities.MealActivity
+import com.cagatayinyurt.foodapp.view.fragments.bottomsheet.MealBottomSheetFragment
 import com.cagatayinyurt.foodapp.viewmodel.HomeViewModel
 
 class HomeFragment : Fragment() {
@@ -65,6 +69,15 @@ class HomeFragment : Fragment() {
         observeCategoriesLiveData()
 
         onCategoryClick()
+
+        onPopularItemLongClick()
+    }
+
+    private fun onPopularItemLongClick() {
+        popularItemsAdapter.onLongItemClick = { meal ->
+            val mealBottomSheetFragment = MealBottomSheetFragment.newInstance(meal.idMeal)
+            mealBottomSheetFragment.show(childFragmentManager, "MealInfo")
+        }
     }
 
     private fun onCategoryClick() {

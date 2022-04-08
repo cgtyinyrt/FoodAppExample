@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.cagatayinyurt.foodapp.data.model.Meal
 import com.cagatayinyurt.foodapp.databinding.MealItemBinding
-import com.cagatayinyurt.foodapp.view.HomeFragment
-import com.cagatayinyurt.foodapp.view.MealActivity
+import com.cagatayinyurt.foodapp.view.fragments.HomeFragment
+import com.cagatayinyurt.foodapp.view.activities.MealActivity
 
 class FavoritesMealsAdapter : RecyclerView.Adapter<FavoritesMealsAdapter.FavoritesViewHolder>() {
 
