@@ -65,6 +65,7 @@ class MealActivity : AppCompatActivity() {
     }
 
     private var mealToSave: Meal? = null
+
     private fun observeMealDetailsLiveData() {
         viewModel.observeMealDetailLiveData().observe(this) { t ->
             onResponseCase()
